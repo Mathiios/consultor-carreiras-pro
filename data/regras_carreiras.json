@@ -1,0 +1,1038 @@
+{
+  "versao": "2.0.0",
+  "atualizado_em": "2026-10-29",
+  "titulo": "Base de Conhecimento — Consultor Avançado de Carreiras em TI",
+  "descricao": "Conhecimento totalmente desacoplado do motor: dimensões, pesos da matriz de afinidade, regras ponderadas, catálogo de competências e trilhas com roadmap.",
+  "escala_likert": {
+    "min": 1,
+    "max": 5,
+    "rotulos": {
+      "1": "Nenhuma afinidade",
+      "2": "Pouca afinidade",
+      "3": "Afinidade moderada",
+      "4": "Boa afinidade",
+      "5": "Muita afinidade"
+    }
+  },
+  "ajuste_maximo_regras": 20,
+  "dimensoes": [
+    {
+      "id": "logica",
+      "nome": "Raciocínio lógico e algoritmos",
+      "pergunta": "Gosto de resolver problemas de lógica e escrever algoritmos",
+      "ajuda": "Pensar em passos, depurar e estruturar soluções com código.",
+      "etapa": 2
+    },
+    {
+      "id": "matematica",
+      "nome": "Matemática e estatística",
+      "pergunta": "Tenho afinidade com matemática, probabilidade e estatística",
+      "ajuda": "Interpretar números, modelos e resultados quantitativos.",
+      "etapa": 2
+    },
+    {
+      "id": "visual",
+      "nome": "Design e interfaces",
+      "pergunta": "Gosto de criar telas, layouts e cuidar da experiência visual",
+      "ajuda": "Estética, usabilidade e comunicação visual.",
+      "etapa": 2
+    },
+    {
+      "id": "infra",
+      "nome": "Infraestrutura e redes",
+      "pergunta": "Tenho interesse em servidores, redes e ambientes de execução",
+      "ajuda": "Máquinas, containers, disponibilidade e conectividade.",
+      "etapa": 2
+    },
+    {
+      "id": "dados",
+      "nome": "Dados e análise",
+      "pergunta": "Gosto de explorar, limpar e organizar grandes volumes de dados",
+      "ajuda": "Tabelas, consultas, pipelines e qualidade de dados.",
+      "etapa": 2
+    },
+    {
+      "id": "seguranca",
+      "nome": "Segurança e investigação",
+      "pergunta": "Tenho interesse em encontrar falhas e proteger sistemas",
+      "ajuda": "Ameaças, vulnerabilidades, defesa e resposta a incidentes.",
+      "etapa": 2
+    },
+    {
+      "id": "automacao",
+      "nome": "Automação de processos",
+      "pergunta": "Gosto de automatizar tarefas, builds e entregas",
+      "ajuda": "Scripts, CI/CD e redução de trabalho manual.",
+      "etapa": 2
+    },
+    {
+      "id": "gestao",
+      "nome": "Gestão e pessoas",
+      "pergunta": "Gosto de priorizar decisões, negociar e coordenar pessoas",
+      "ajuda": "Comunicação, priorização e alinhamento de times.",
+      "etapa": 2
+    }
+  ],
+  "categoricas": [
+    {
+      "id": "linguagem",
+      "nome": "Linguagem/ferramenta de maior afinidade",
+      "pergunta": "Qual linguagem ou ferramenta você mais se identifica hoje?",
+      "etapa": 2,
+      "opcoes": [
+        { "valor": "python", "rotulo": "Python" },
+        { "valor": "javascript", "rotulo": "JavaScript / TypeScript" },
+        { "valor": "sql", "rotulo": "SQL e bancos de dados" },
+        { "valor": "linux", "rotulo": "Linux / Redes" },
+        { "valor": "mobile", "rotulo": "Kotlin / Swift / Flutter" },
+        { "valor": "nenhuma", "rotulo": "Nenhuma / sou iniciante" }
+      ]
+    },
+    {
+      "id": "entrega",
+      "nome": "Tipo de entrega de valor",
+      "pergunta": "Que tipo de valor você prefere entregar no trabalho?",
+      "etapa": 3,
+      "opcoes": [
+        { "valor": "usuario", "rotulo": "O produto final para o usuário" },
+        { "valor": "infraestrutura", "rotulo": "A infraestrutura que sustenta o sistema" },
+        { "valor": "seguranca", "rotulo": "A segurança contra invasões" },
+        { "valor": "dados", "rotulo": "Dados e modelos que geram decisões" },
+        { "valor": "negocio", "rotulo": "O negócio e a estratégia do produto" }
+      ]
+    },
+    {
+      "id": "objetivo",
+      "nome": "Objetivo de carreira",
+      "pergunta": "Qual é o seu principal objetivo profissional?",
+      "etapa": 3,
+      "opcoes": [
+        { "valor": "criar_produtos", "rotulo": "Criar produtos que as pessoas usem" },
+        { "valor": "proteger", "rotulo": "Proteger sistemas e dados" },
+        { "valor": "escalar_infra", "rotulo": "Sustentar escala e disponibilidade" },
+        { "valor": "prever_dados", "rotulo": "Prever e decidir com dados/IA" },
+        { "valor": "liderar_negocio", "rotulo": "Liderar pessoas e decisões de negócio" }
+      ]
+    },
+    {
+      "id": "estilo",
+      "nome": "Estilo de trabalho",
+      "pergunta": "Como você prefere que seja o seu dia a dia?",
+      "etapa": 3,
+      "opcoes": [
+        { "valor": "logica_profunda", "rotulo": "Foco profundo em lógica e construção" },
+        { "valor": "criativo", "rotulo": "Criação visual e experimentação" },
+        { "valor": "investigativo", "rotulo": "Investigação e análise de causas" },
+        { "valor": "processo_metodo", "rotulo": "Processo, método e organização" },
+        { "valor": "pessoas", "rotulo": "Contato com pessoas e negociação" }
+      ]
+    }
+  ],
+  "matriz_afinidade": {
+    "logica":      { "backend": 5, "frontend": 3, "ciencia_dados": 4, "engenharia_dados": 4, "seguranca": 4, "devops": 4, "cloud": 3, "mobile": 4, "qa": 4, "produto": 1 },
+    "matematica":  { "backend": 1, "frontend": 0, "ciencia_dados": 5, "engenharia_dados": 4, "seguranca": 2, "devops": 1, "cloud": 1, "mobile": 0, "qa": 2, "produto": 2 },
+    "visual":      { "backend": 1, "frontend": 5, "ciencia_dados": 1, "engenharia_dados": 0, "seguranca": 0, "devops": 0, "cloud": 0, "mobile": 4, "qa": 1, "produto": 3 },
+    "infra":       { "backend": 2, "frontend": 0, "ciencia_dados": 2, "engenharia_dados": 5, "seguranca": 4, "devops": 5, "cloud": 5, "mobile": 0, "qa": 2, "produto": 1 },
+    "dados":       { "backend": 3, "frontend": 1, "ciencia_dados": 5, "engenharia_dados": 5, "seguranca": 2, "devops": 2, "cloud": 2, "mobile": 1, "qa": 3, "produto": 3 },
+    "seguranca":   { "backend": 1, "frontend": 0, "ciencia_dados": 1, "engenharia_dados": 1, "seguranca": 5, "devops": 2, "cloud": 3, "mobile": 1, "qa": 1, "produto": 1 },
+    "automacao":   { "backend": 2, "frontend": 1, "ciencia_dados": 1, "engenharia_dados": 3, "seguranca": 2, "devops": 5, "cloud": 4, "mobile": 1, "qa": 3, "produto": 1 },
+    "gestao":      { "backend": 1, "frontend": 1, "ciencia_dados": 1, "engenharia_dados": 1, "seguranca": 1, "devops": 1, "cloud": 1, "mobile": 1, "qa": 1, "produto": 5 }
+  },
+  "regras": [
+    {
+      "id": "R01",
+      "nome": "Lógica aplicada a produto",
+      "tipo": "reforco",
+      "certeza": 0.9,
+      "condicoes": [
+        { "fonte": "logica", "op": ">=", "valor": 4 },
+        { "fonte": "entrega", "op": "==", "valor": "usuario" }
+      ],
+      "efeitos": [
+        { "trilha": "backend", "delta": 6 },
+        { "trilha": "mobile", "delta": 2 }
+      ],
+      "explicacao": "Gostar de lógica e querer entregar o produto ao usuário aponta para construção de aplicações (Back-end/Mobile)."
+    },
+    {
+      "id": "R02",
+      "nome": "Lógica com Python",
+      "tipo": "reforco",
+      "certeza": 0.85,
+      "condicoes": [
+        { "fonte": "logica", "op": ">=", "valor": 4 },
+        { "fonte": "linguagem", "op": "==", "valor": "python" }
+      ],
+      "efeitos": [
+        { "trilha": "backend", "delta": 5 },
+        { "trilha": "ciencia_dados", "delta": 3 },
+        { "trilha": "engenharia_dados", "delta": 3 }
+      ],
+      "explicacao": "Python é a linguagem mais transversal entre back-end, ciência e engenharia de dados."
+    },
+    {
+      "id": "R03",
+      "nome": "Visual com foco no usuário",
+      "tipo": "reforco",
+      "certeza": 0.9,
+      "condicoes": [
+        { "fonte": "visual", "op": ">=", "valor": 4 },
+        { "fonte": "entrega", "op": "==", "valor": "usuario" }
+      ],
+      "efeitos": [
+        { "trilha": "frontend", "delta": 7 },
+        { "trilha": "mobile", "delta": 3 }
+      ],
+      "explicacao": "Afinidade visual somada à entrega para o usuário é o núcleo de Front-end & UI/UX."
+    },
+    {
+      "id": "R04",
+      "nome": "Visual com JavaScript",
+      "tipo": "reforco",
+      "certeza": 0.85,
+      "condicoes": [
+        { "fonte": "visual", "op": ">=", "valor": 3 },
+        { "fonte": "linguagem", "op": "==", "valor": "javascript" }
+      ],
+      "efeitos": [{ "trilha": "frontend", "delta": 6 }],
+      "explicacao": "JavaScript + afinidade visual indica frameworks reativos de interface."
+    },
+    {
+      "id": "R05",
+      "nome": "Visual com ferramentas mobile",
+      "tipo": "reforco",
+      "certeza": 0.9,
+      "condicoes": [
+        { "fonte": "visual", "op": ">=", "valor": 4 },
+        { "fonte": "linguagem", "op": "==", "valor": "mobile" }
+      ],
+      "efeitos": [
+        { "trilha": "mobile", "delta": 8 },
+        { "trilha": "frontend", "delta": -2 }
+      ],
+      "explicacao": "Flutter/Swift/Kotlin com afinidade visual puxa o perfil para o desenvolvimento mobile."
+    },
+    {
+      "id": "R06",
+      "nome": "Matemática e dados",
+      "tipo": "reforco",
+      "certeza": 0.9,
+      "condicoes": [
+        { "fonte": "matematica", "op": ">=", "valor": 4 },
+        { "fonte": "dados", "op": ">=", "valor": 4 }
+      ],
+      "efeitos": [
+        { "trilha": "ciencia_dados", "delta": 7 },
+        { "trilha": "engenharia_dados", "delta": 4 }
+      ],
+      "explicacao": "Base quantitativa alta é o principal preditor de sucesso em Ciência de Dados."
+    },
+    {
+      "id": "R07",
+      "nome": "Matemática com objetivo preditivo",
+      "tipo": "reforco",
+      "certeza": 0.85,
+      "condicoes": [
+        { "fonte": "matematica", "op": ">=", "valor": 4 },
+        { "fonte": "objetivo", "op": "==", "valor": "prever_dados" }
+      ],
+      "efeitos": [{ "trilha": "ciencia_dados", "delta": 6 }],
+      "explicacao": "Querer decidir com dados e ter base matemática aponta para modelagem preditiva."
+    },
+    {
+      "id": "R08",
+      "nome": "Dados com SQL",
+      "tipo": "reforco",
+      "certeza": 0.9,
+      "condicoes": [
+        { "fonte": "dados", "op": ">=", "valor": 4 },
+        { "fonte": "linguagem", "op": "==", "valor": "sql" }
+      ],
+      "efeitos": [
+        { "trilha": "engenharia_dados", "delta": 7 },
+        { "trilha": "ciencia_dados", "delta": 2 }
+      ],
+      "explicacao": "SQL é a ferramenta central de pipelines e modelagem analítica (Engenharia de Dados)."
+    },
+    {
+      "id": "R09",
+      "nome": "Dados com infraestrutura",
+      "tipo": "reforco",
+      "certeza": 0.85,
+      "condicoes": [
+        { "fonte": "dados", "op": ">=", "valor": 4 },
+        { "fonte": "infra", "op": ">=", "valor": 4 }
+      ],
+      "efeitos": [
+        { "trilha": "engenharia_dados", "delta": 6 },
+        { "trilha": "cloud", "delta": 3 }
+      ],
+      "explicacao": "Dados + infraestrutura é a assinatura de quem constrói plataformas de dados."
+    },
+    {
+      "id": "R10",
+      "nome": "Infraestrutura com automação",
+      "tipo": "reforco",
+      "certeza": 0.9,
+      "condicoes": [
+        { "fonte": "infra", "op": ">=", "valor": 4 },
+        { "fonte": "automacao", "op": ">=", "valor": 4 }
+      ],
+      "efeitos": [
+        { "trilha": "devops", "delta": 7 },
+        { "trilha": "cloud", "delta": 4 }
+      ],
+      "explicacao": "Automatizar infraestrutura é a essência de DevOps/SRE."
+    },
+    {
+      "id": "R11",
+      "nome": "Automação com Linux",
+      "tipo": "reforco",
+      "certeza": 0.85,
+      "condicoes": [
+        { "fonte": "automacao", "op": ">=", "valor": 4 },
+        { "fonte": "linguagem", "op": "==", "valor": "linux" }
+      ],
+      "efeitos": [
+        { "trilha": "devops", "delta": 7 },
+        { "trilha": "seguranca", "delta": 2 }
+      ],
+      "explicacao": "Shell/Linux com mentalidade de automação é o perfil clássico de DevOps e SRE."
+    },
+    {
+      "id": "R12",
+      "nome": "Infraestrutura com objetivo de escala",
+      "tipo": "reforco",
+      "certeza": 0.9,
+      "condicoes": [
+        { "fonte": "infra", "op": ">=", "valor": 4 },
+        { "fonte": "objetivo", "op": "==", "valor": "escalar_infra" }
+      ],
+      "efeitos": [
+        { "trilha": "cloud", "delta": 7 },
+        { "trilha": "devops", "delta": 3 }
+      ],
+      "explicacao": "Querer escala e disponibilidade com afinidade por infraestrutura aponta para arquitetura de nuvem."
+    },
+    {
+      "id": "R13",
+      "nome": "Segurança com Linux",
+      "tipo": "reforco",
+      "certeza": 0.9,
+      "condicoes": [
+        { "fonte": "seguranca", "op": ">=", "valor": 4 },
+        { "fonte": "linguagem", "op": "==", "valor": "linux" }
+      ],
+      "efeitos": [
+        { "trilha": "seguranca", "delta": 7 },
+        { "trilha": "devops", "delta": 2 }
+      ],
+      "explicacao": "Linux/redes é o ambiente natural de pentest e defesa cibernética."
+    },
+    {
+      "id": "R14",
+      "nome": "Segurança com objetivo de proteção",
+      "tipo": "reforco",
+      "certeza": 0.9,
+      "condicoes": [
+        { "fonte": "seguranca", "op": ">=", "valor": 4 },
+        { "fonte": "objetivo", "op": "==", "valor": "proteger" }
+      ],
+      "efeitos": [{ "trilha": "seguranca", "delta": 6 }],
+      "explicacao": "Objetivo explícito de proteger sistemas confirma a trilha de Cibersegurança."
+    },
+    {
+      "id": "R15",
+      "nome": "Segurança sobre infraestrutura",
+      "tipo": "reforco",
+      "certeza": 0.8,
+      "condicoes": [
+        { "fonte": "seguranca", "op": ">=", "valor": 4 },
+        { "fonte": "infra", "op": ">=", "valor": 3 }
+      ],
+      "efeitos": [
+        { "trilha": "seguranca", "delta": 4 },
+        { "trilha": "cloud", "delta": 2 }
+      ],
+      "explicacao": "Entender redes e servidores potencializa a atuação em segurança."
+    },
+    {
+      "id": "R16",
+      "nome": "Gestão com objetivo de liderança",
+      "tipo": "reforco",
+      "certeza": 0.9,
+      "condicoes": [
+        { "fonte": "gestao", "op": ">=", "valor": 4 },
+        { "fonte": "objetivo", "op": "==", "valor": "liderar_negocio" }
+      ],
+      "efeitos": [{ "trilha": "produto", "delta": 8 }],
+      "explicacao": "Afinidade com pessoas e objetivo de liderança definem o perfil de Product Management."
+    },
+    {
+      "id": "R17",
+      "nome": "Gestão orientada a negócio",
+      "tipo": "reforco",
+      "certeza": 0.85,
+      "condicoes": [
+        { "fonte": "gestao", "op": ">=", "valor": 3 },
+        { "fonte": "entrega", "op": "==", "valor": "negocio" }
+      ],
+      "efeitos": [{ "trilha": "produto", "delta": 6 }],
+      "explicacao": "Querer entregar valor de negócio com afinidade de gestão aponta para produto."
+    },
+    {
+      "id": "R18",
+      "nome": "Lógica com processo",
+      "tipo": "reforco",
+      "certeza": 0.8,
+      "condicoes": [
+        { "fonte": "logica", "op": ">=", "valor": 4 },
+        { "fonte": "estilo", "op": "==", "valor": "processo_metodo" }
+      ],
+      "efeitos": [
+        { "trilha": "qa", "delta": 7 },
+        { "trilha": "backend", "delta": 1 }
+      ],
+      "explicacao": "Gostar de lógica e de método é a base de QA (testes e confiabilidade)."
+    },
+    {
+      "id": "R19",
+      "nome": "Automação com processo",
+      "tipo": "reforco",
+      "certeza": 0.8,
+      "condicoes": [
+        { "fonte": "automacao", "op": ">=", "valor": 3 },
+        { "fonte": "estilo", "op": "==", "valor": "processo_metodo" }
+      ],
+      "efeitos": [
+        { "trilha": "qa", "delta": 6 },
+        { "trilha": "devops", "delta": 2 }
+      ],
+      "explicacao": "Automatizar com método aproxima tanto QA quanto DevOps."
+    },
+    {
+      "id": "R20",
+      "nome": "Perfil investigativo voltado à segurança",
+      "tipo": "reforco",
+      "certeza": 0.85,
+      "condicoes": [
+        { "fonte": "estilo", "op": "==", "valor": "investigativo" },
+        { "fonte": "seguranca", "op": ">=", "valor": 3 }
+      ],
+      "efeitos": [
+        { "trilha": "seguranca", "delta": 5 },
+        { "trilha": "ciencia_dados", "delta": 2 }
+      ],
+      "explicacao": "Investigar causas e falhas é o dia a dia de pentest e resposta a incidentes."
+    },
+    {
+      "id": "R21",
+      "nome": "Perfil investigativo voltado a dados",
+      "tipo": "reforco",
+      "certeza": 0.8,
+      "condicoes": [
+        { "fonte": "estilo", "op": "==", "valor": "investigativo" },
+        { "fonte": "dados", "op": ">=", "valor": 4 }
+      ],
+      "efeitos": [
+        { "trilha": "ciencia_dados", "delta": 4 },
+        { "trilha": "engenharia_dados", "delta": 2 }
+      ],
+      "explicacao": "Testar hipóteses com dados é a rotina de análise e modelagem."
+    },
+    {
+      "id": "R22",
+      "nome": "Perfil criativo com afinidade visual",
+      "tipo": "reforco",
+      "certeza": 0.85,
+      "condicoes": [
+        { "fonte": "estilo", "op": "==", "valor": "criativo" },
+        { "fonte": "visual", "op": ">=", "valor": 4 }
+      ],
+      "efeitos": [
+        { "trilha": "frontend", "delta": 6 },
+        { "trilha": "mobile", "delta": 3 }
+      ],
+      "explicacao": "Criatividade aplicada a interfaces caracteriza Front-end/UI e Mobile."
+    },
+    {
+      "id": "R23",
+      "nome": "Perfil de foco lógico",
+      "tipo": "reforco",
+      "certeza": 0.85,
+      "condicoes": [
+        { "fonte": "estilo", "op": "==", "valor": "logica_profunda" },
+        { "fonte": "logica", "op": ">=", "valor": 4 }
+      ],
+      "efeitos": [
+        { "trilha": "backend", "delta": 5 },
+        { "trilha": "engenharia_dados", "delta": 1 }
+      ],
+      "explicacao": "Preferir concentração em lógica é típico de quem constrói APIs e serviços."
+    },
+    {
+      "id": "R24",
+      "nome": "Perfil orientado a pessoas",
+      "tipo": "reforco",
+      "certeza": 0.85,
+      "condicoes": [
+        { "fonte": "estilo", "op": "==", "valor": "pessoas" },
+        { "fonte": "gestao", "op": ">=", "valor": 3 }
+      ],
+      "efeitos": [{ "trilha": "produto", "delta": 6 }],
+      "explicacao": "Gostar de negociação e alinhamento sustenta a rotina de Product Management."
+    },
+    {
+      "id": "R25",
+      "nome": "Dados com automação",
+      "tipo": "reforco",
+      "certeza": 0.8,
+      "condicoes": [
+        { "fonte": "dados", "op": ">=", "valor": 4 },
+        { "fonte": "automacao", "op": ">=", "valor": 4 }
+      ],
+      "efeitos": [
+        { "trilha": "engenharia_dados", "delta": 5 },
+        { "trilha": "devops", "delta": 2 }
+      ],
+      "explicacao": "Orquestrar pipelines e automatizar cargas é o centro da Engenharia de Dados."
+    },
+    {
+      "id": "D01",
+      "nome": "Ciência × Engenharia: modelagem",
+      "tipo": "desambiguacao",
+      "certeza": 0.9,
+      "condicoes": [
+        { "fonte": "matematica", "op": ">=", "valor": 4 },
+        { "fonte": "dados", "op": ">=", "valor": 3 },
+        { "fonte": "infra", "op": "<=", "valor": 2 }
+      ],
+      "efeitos": [
+        { "trilha": "ciencia_dados", "delta": 5 },
+        { "trilha": "engenharia_dados", "delta": -3 }
+      ],
+      "explicacao": "Com pouca afinidade por infraestrutura, o perfil é analítico (modelagem) e não de plataforma."
+    },
+    {
+      "id": "D02",
+      "nome": "Ciência × Engenharia: pipelines",
+      "tipo": "desambiguacao",
+      "certeza": 0.9,
+      "condicoes": [
+        { "fonte": "dados", "op": ">=", "valor": 4 },
+        { "fonte": "infra", "op": ">=", "valor": 4 },
+        { "fonte": "automacao", "op": ">=", "valor": 3 }
+      ],
+      "efeitos": [
+        { "trilha": "engenharia_dados", "delta": 5 },
+        { "trilha": "ciencia_dados", "delta": -2 }
+      ],
+      "explicacao": "Dados + infraestrutura + automação = construção de plataformas e pipelines."
+    },
+    {
+      "id": "D03",
+      "nome": "DevOps × Cloud: entrega",
+      "tipo": "desambiguacao",
+      "certeza": 0.85,
+      "condicoes": [
+        { "fonte": "automacao", "op": ">=", "valor": 4 },
+        { "fonte": "entrega", "op": "==", "valor": "infraestrutura" },
+        { "fonte": "objetivo", "op": "!=", "valor": "escalar_infra" }
+      ],
+      "efeitos": [
+        { "trilha": "devops", "delta": 5 },
+        { "trilha": "cloud", "delta": -2 }
+      ],
+      "explicacao": "Quem quer automatizar a entrega (e não projetar ambientes) fica em DevOps."
+    },
+    {
+      "id": "D04",
+      "nome": "Cloud × DevOps: escala",
+      "tipo": "desambiguacao",
+      "certeza": 0.85,
+      "condicoes": [
+        { "fonte": "infra", "op": ">=", "valor": 4 },
+        { "fonte": "objetivo", "op": "==", "valor": "escalar_infra" },
+        { "fonte": "automacao", "op": "<=", "valor": 3 }
+      ],
+      "efeitos": [
+        { "trilha": "cloud", "delta": 5 },
+        { "trilha": "devops", "delta": -2 }
+      ],
+      "explicacao": "Projetar ambientes escaláveis sem foco em automação de entrega é Cloud Architecture."
+    },
+    {
+      "id": "D05",
+      "nome": "Front-end × Mobile: nativo",
+      "tipo": "desambiguacao",
+      "certeza": 0.9,
+      "condicoes": [
+        { "fonte": "linguagem", "op": "==", "valor": "mobile" },
+        { "fonte": "visual", "op": ">=", "valor": 3 }
+      ],
+      "efeitos": [
+        { "trilha": "mobile", "delta": 5 },
+        { "trilha": "frontend", "delta": -3 }
+      ],
+      "explicacao": "Ferramentas mobile afastam o perfil do Front-end web tradicional."
+    },
+    {
+      "id": "D06",
+      "nome": "QA × Back-end",
+      "tipo": "desambiguacao",
+      "certeza": 0.8,
+      "condicoes": [
+        { "fonte": "logica", "op": ">=", "valor": 4 },
+        { "fonte": "estilo", "op": "==", "valor": "processo_metodo" },
+        { "fonte": "automacao", "op": ">=", "valor": 3 }
+      ],
+      "efeitos": [
+        { "trilha": "qa", "delta": 7 },
+        { "trilha": "backend", "delta": -3 }
+      ],
+      "explicacao": "Lógica com forte preferência por método e automação pende para qualidade de software."
+    },
+    {
+      "id": "D07",
+      "nome": "Produto × perfis técnicos",
+      "tipo": "desambiguacao",
+      "certeza": 0.8,
+      "condicoes": [
+        { "fonte": "gestao", "op": ">=", "valor": 4 },
+        { "fonte": "logica", "op": "<=", "valor": 2 }
+      ],
+      "efeitos": [
+        { "trilha": "produto", "delta": 5 },
+        { "trilha": "backend", "delta": -2 },
+        { "trilha": "ciencia_dados", "delta": -2 }
+      ],
+      "explicacao": "Forte orientação a gestão com pouca afinidade técnica indica gestão de produto."
+    },
+    {
+      "id": "P01",
+      "nome": "Penalidade: IA/previsão sem base matemática",
+      "tipo": "penalidade",
+      "certeza": 1.0,
+      "condicoes": [
+        { "fonte": "matematica", "op": "<=", "valor": 2 },
+        { "fonte": "objetivo", "op": "==", "valor": "prever_dados" }
+      ],
+      "efeitos": [
+        { "trilha": "ciencia_dados", "delta": -10 },
+        { "trilha": "engenharia_dados", "delta": -3 }
+      ],
+      "explicacao": "Modelagem preditiva exige base quantitativa; sem ela, a recomendação ingênua é evitada."
+    },
+    {
+      "id": "P02",
+      "nome": "Penalidade: escala sem afinidade de infraestrutura",
+      "tipo": "penalidade",
+      "certeza": 0.95,
+      "condicoes": [
+        { "fonte": "infra", "op": "<=", "valor": 2 },
+        { "fonte": "objetivo", "op": "==", "valor": "escalar_infra" }
+      ],
+      "efeitos": [
+        { "trilha": "cloud", "delta": -8 },
+        { "trilha": "devops", "delta": -4 }
+      ],
+      "explicacao": "Sem interesse real por infraestrutura, arquitetura de nuvem seria uma escolha frustrante."
+    },
+    {
+      "id": "P03",
+      "nome": "Penalidade: liderança sem afinidade de gestão",
+      "tipo": "penalidade",
+      "certeza": 0.95,
+      "condicoes": [
+        { "fonte": "gestao", "op": "<=", "valor": 2 },
+        { "fonte": "objetivo", "op": "==", "valor": "liderar_negocio" }
+      ],
+      "efeitos": [{ "trilha": "produto", "delta": -8 }],
+      "explicacao": "Product Management é intensivo em pessoas; pouca afinidade de gestão é um alerta."
+    },
+    {
+      "id": "P04",
+      "nome": "Penalidade: segurança sem afinidade",
+      "tipo": "penalidade",
+      "certeza": 0.9,
+      "condicoes": [
+        { "fonte": "seguranca", "op": "<=", "valor": 2 },
+        { "fonte": "objetivo", "op": "==", "valor": "proteger" }
+      ],
+      "efeitos": [{ "trilha": "seguranca", "delta": -6 }],
+      "explicacao": "Cibersegurança exige curiosidade investigativa e tolerância a estudo contínuo."
+    },
+    {
+      "id": "P05",
+      "nome": "Penalidade: produto sem afinidade com pessoas",
+      "tipo": "penalidade",
+      "certeza": 0.85,
+      "condicoes": [
+        { "fonte": "gestao", "op": "<=", "valor": 2 },
+        { "fonte": "entrega", "op": "==", "valor": "negocio" }
+      ],
+      "efeitos": [{ "trilha": "produto", "delta": -5 }],
+      "explicacao": "Entregar valor de negócio exige negociação e alinhamento constantes."
+    },
+    {
+      "id": "P06",
+      "nome": "Penalidade: front-end sem afinidade visual",
+      "tipo": "penalidade",
+      "certeza": 0.85,
+      "condicoes": [
+        { "fonte": "visual", "op": "<=", "valor": 2 },
+        { "fonte": "entrega", "op": "==", "valor": "usuario" },
+        { "fonte": "linguagem", "op": "==", "valor": "javascript" }
+      ],
+      "efeitos": [{ "trilha": "frontend", "delta": -5 }],
+      "explicacao": "JavaScript sem interesse por interface tende a render mais no back-end do que no front."
+    }
+  ],
+  "competencias": {
+    "logica_programacao": { "nome": "Lógica de programação", "topicos": ["estruturas de controle", "funções", "estruturas de dados básicas", "complexidade"] },
+    "git": { "nome": "Git e GitHub", "topicos": ["commits", "branches", "pull requests", "revisão de código"] },
+    "python": { "nome": "Python", "topicos": ["sintaxe", "POO", "bibliotecas", "ambientes virtuais"] },
+    "javascript": { "nome": "JavaScript/TypeScript", "topicos": ["ES6+", "assincronismo", "módulos", "tipos"] },
+    "sql": { "nome": "SQL", "topicos": ["SELECT/joins", "agregações", "subqueries", "índices"] },
+    "api_rest": { "nome": "APIs REST", "topicos": ["HTTP", "versionamento", "autenticação", "documentação OpenAPI"] },
+    "html_css": { "nome": "HTML e CSS", "topicos": ["semântica", "flexbox/grid", "responsividade", "pré-processadores"] },
+    "react": { "nome": "React", "topicos": ["componentes", "hooks", "estado", "roteamento"] },
+    "ux_design": { "nome": "UX/UI Design", "topicos": ["pesquisa com usuários", "wireframes", "design system", "testes de usabilidade"] },
+    "acessibilidade": { "nome": "Acessibilidade (a11y)", "topicos": ["WCAG", "leitores de tela", "contraste", "navegação por teclado"] },
+    "estatistica": { "nome": "Estatística", "topicos": ["distribuições", "inferência", "testes de hipótese", "correlação"] },
+    "pandas": { "nome": "Manipulação de dados (pandas)", "topicos": ["dataframes", "limpeza", "agregações", "joins"] },
+    "machine_learning": { "nome": "Machine Learning", "topicos": ["regressão/classificação", "validação cruzada", "métricas", "overfitting"] },
+    "visualizacao": { "nome": "Visualização de dados", "topicos": ["escolha de gráficos", "dashboards", "storytelling com dados"] },
+    "etl": { "nome": "ETL/ELT", "topicos": ["extração", "transformação", "carga incremental", "idempotência"] },
+    "modelagem_dados": { "nome": "Modelagem de dados", "topicos": ["modelo relacional", "star schema", "normalização", "data warehouse"] },
+    "spark": { "nome": "Processamento distribuído (Spark)", "topicos": ["dataframes", "particionamento", "jobs", "otimização"] },
+    "airflow": { "nome": "Orquestração (Airflow)", "topicos": ["DAGs", "operadores", "agendamento", "monitoramento"] },
+    "redes": { "nome": "Redes de computadores", "topicos": ["TCP/IP", "DNS", "sub-redes", "firewalls"] },
+    "linux": { "nome": "Linux", "topicos": ["permissões", "processos", "systemd", "logs"] },
+    "shell": { "nome": "Shell scripting", "topicos": ["bash", "pipes", "cron", "automação"] },
+    "pentest": { "nome": "Testes de invasão (pentest)", "topicos": ["OWASP Top 10", "reconhecimento", "exploração", "relatório"] },
+    "criptografia": { "nome": "Criptografia", "topicos": ["simétrica/assimétrica", "hash", "TLS", "gestão de chaves"] },
+    "siem": { "nome": "Monitoramento e SIEM", "topicos": ["logs", "detecção", "resposta a incidentes", "correlação"] },
+    "ci_cd": { "nome": "CI/CD", "topicos": ["pipelines", "testes no build", "deploy automatizado", "estratégias de release"] },
+    "docker": { "nome": "Contêineres (Docker)", "topicos": ["imagens", "Dockerfile", "volumes", "compose"] },
+    "kubernetes": { "nome": "Kubernetes", "topicos": ["pods", "deployments", "services", "helm"] },
+    "terraform": { "nome": "Infraestrutura como código", "topicos": ["HCL", "state", "módulos", "provedores"] },
+    "observabilidade": { "nome": "Observabilidade", "topicos": ["métricas", "logs", "traces", "alertas"] },
+    "nuvem": { "nome": "Fundamentos de nuvem (AWS/Azure/GCP)", "topicos": ["regiões/zonas", "computação", "armazenamento", "IAM"] },
+    "arquitetura_cloud": { "nome": "Arquitetura em nuvem", "topicos": ["alta disponibilidade", "escalabilidade", "balanceamento", "resiliência"] },
+    "custos_cloud": { "nome": "FinOps e custos", "topicos": ["dimensionamento", "orçamento", "otimização de custos"] },
+    "mobile_dev": { "nome": "Desenvolvimento mobile", "topicos": ["componentes", "navegação", "estado", "integração com APIs"] },
+    "publicacao_lojas": { "nome": "Publicação de apps", "topicos": ["build assinado", "TestFlight/Play Console", "políticas das lojas"] },
+    "testes_manuais": { "nome": "Testes manuais e de aceitação", "topicos": ["casos de teste", "bug report", "critérios de aceite"] },
+    "testes_automatizados": { "nome": "Testes automatizados", "topicos": ["unitários", "integração", "e2e", "mocks"] },
+    "api_testing": { "nome": "Testes de API", "topicos": ["Postman", "contratos", "carga", "autenticação"] },
+    "ci_qualidade": { "nome": "Qualidade em pipeline", "topicos": ["cobertura", "análise estática", "quality gates"] },
+    "discovery": { "nome": "Product Discovery", "topicos": ["entrevistas", "problema x solução", "hipóteses", "MVP"] },
+    "scrum": { "nome": "Métodos ágeis", "topicos": ["Scrum", "Kanban", "cerimônias", "backlog"] },
+    "roadmap_produto": { "nome": "Roadmap e priorização", "topicos": ["RICE/WSJF", "OKRs", "visão de produto"] },
+    "metricas_produto": { "nome": "Métricas de produto", "topicos": ["North Star", "funil", "retenção", "experimentos A/B"] },
+    "stakeholder": { "nome": "Gestão de stakeholders", "topicos": ["alinhamento", "comunicação", "negociação", "apresentações"] }
+  },
+  "tecnologias": {
+    "python": { "nome": "Python", "skills": { "python": 3, "logica_programacao": 2 } },
+    "javascript": { "nome": "JavaScript", "skills": { "javascript": 3, "logica_programacao": 2 } },
+    "html_css": { "nome": "HTML/CSS", "skills": { "html_css": 3, "acessibilidade": 1 } },
+    "react": { "nome": "React", "skills": { "react": 3, "javascript": 2, "html_css": 1 } },
+    "nodejs": { "nome": "Node.js", "skills": { "api_rest": 2, "javascript": 2 } },
+    "figma": { "nome": "Figma", "skills": { "ux_design": 3, "acessibilidade": 1 } },
+    "sql": { "nome": "SQL", "skills": { "sql": 3, "modelagem_dados": 2 } },
+    "pandas": { "nome": "pandas", "skills": { "pandas": 3, "python": 2, "estatistica": 2 } },
+    "scikit_learn": { "nome": "scikit-learn", "skills": { "machine_learning": 3, "estatistica": 2, "python": 2 } },
+    "power_bi": { "nome": "Power BI", "skills": { "visualizacao": 3, "sql": 1 } },
+    "spark": { "nome": "Apache Spark", "skills": { "spark": 3, "etl": 2, "modelagem_dados": 1 } },
+    "airflow": { "nome": "Apache Airflow", "skills": { "airflow": 3, "etl": 2, "python": 1 } },
+    "docker": { "nome": "Docker", "skills": { "docker": 3, "ci_cd": 1 } },
+    "kubernetes": { "nome": "Kubernetes", "skills": { "kubernetes": 3, "docker": 2, "observabilidade": 2 } },
+    "linux": { "nome": "Linux", "skills": { "linux": 3, "shell": 3, "redes": 1 } },
+    "redes": { "nome": "Redes (TCP/IP)", "skills": { "redes": 3, "shell": 1 } },
+    "wireshark": { "nome": "Wireshark", "skills": { "redes": 2, "siem": 2, "pentest": 1 } },
+    "burp_suite": { "nome": "Burp Suite", "skills": { "pentest": 3, "api_rest": 2 } },
+    "aws": { "nome": "AWS", "skills": { "nuvem": 3, "arquitetura_cloud": 2, "custos_cloud": 2 } },
+    "terraform": { "nome": "Terraform", "skills": { "terraform": 3, "arquitetura_cloud": 2, "nuvem": 1 } },
+    "flutter": { "nome": "Flutter", "skills": { "mobile_dev": 3, "logica_programacao": 1 } },
+    "react_native": { "nome": "React Native", "skills": { "mobile_dev": 3, "react": 1, "javascript": 1 } },
+    "kotlin": { "nome": "Kotlin (Android)", "skills": { "mobile_dev": 3, "publicacao_lojas": 1 } },
+    "pytest": { "nome": "pytest", "skills": { "testes_automatizados": 3, "python": 2, "logica_programacao": 1 } },
+    "cypress": { "nome": "Cypress", "skills": { "testes_automatizados": 3, "javascript": 1, "api_testing": 1 } },
+    "postman": { "nome": "Postman", "skills": { "api_testing": 3, "api_rest": 2 } },
+    "git": { "nome": "Git", "skills": { "git": 3 } },
+    "github_actions": { "nome": "GitHub Actions", "skills": { "ci_cd": 3, "git": 1, "shell": 1 } },
+    "jira_scrum": { "nome": "Jira/Scrum", "skills": { "scrum": 3, "discovery": 1 } },
+    "analytics": { "nome": "Analytics (GA4)", "skills": { "metricas_produto": 3, "visualizacao": 1 } }
+  },
+  "trilhas": {
+    "backend": {
+      "nome": "Desenvolvimento Back-end",
+      "icone": "🛠️",
+      "resumo": "APIs, regras de negócio e integração com bancos de dados.",
+      "atividades": ["projetar APIs", "escrever regras de negócio", "modelar bancos", "otimizar consultas"],
+      "tecnologias": ["python", "nodejs", "sql", "docker", "git"],
+      "competencias": [
+        { "skill": "logica_programacao", "nivel_junior": 3, "importancia": 5 },
+        { "skill": "python", "nivel_junior": 3, "importancia": 5 },
+        { "skill": "api_rest", "nivel_junior": 3, "importancia": 5 },
+        { "skill": "sql", "nivel_junior": 3, "importancia": 4 },
+        { "skill": "git", "nivel_junior": 3, "importancia": 3 },
+        { "skill": "docker", "nivel_junior": 2, "importancia": 3 },
+        { "skill": "testes_automatizados", "nivel_junior": 2, "importancia": 2 }
+      ],
+      "roadmap": [
+        { "titulo": "Fundamentos", "horas": 60, "topicos": ["lógica e estruturas de dados", "Python", "Git/GitHub", "SQL básico"] },
+        { "titulo": "Construção de APIs", "horas": 80, "topicos": ["HTTP e REST", "FastAPI/Flask", "modelagem de banco", "autenticação JWT"] },
+        { "titulo": "Projeto de portfólio", "horas": 50, "topicos": ["API completa com testes", "Dockerfile e deploy", "README técnico"] },
+        { "titulo": "Mercado", "horas": 30, "topicos": ["certificação introdutória", "contribuições open source", "simulação de entrevistas"] }
+      ],
+      "certificacoes": ["AWS Certified Cloud Practitioner", "Python Institute PCAP"],
+      "projetos": [
+        { "titulo": "API de gestão de tarefas", "descricao": "CRUD + autenticação + testes automatizados + deploy em contêiner." },
+        { "titulo": "Integração com serviço externo", "descricao": "API que consome um serviço público, trata falhas e expõe métricas." }
+      ]
+    },
+    "frontend": {
+      "nome": "Desenvolvimento Front-end & UI/UX",
+      "icone": "🎨",
+      "resumo": "Interfaces responsivas, experiência do usuário e frameworks reativos.",
+      "atividades": ["criar layouts responsivos", "implementar componentes", "aplicar design system", "medir usabilidade"],
+      "tecnologias": ["html_css", "javascript", "react", "figma", "git"],
+      "competencias": [
+        { "skill": "html_css", "nivel_junior": 3, "importancia": 5 },
+        { "skill": "javascript", "nivel_junior": 3, "importancia": 5 },
+        { "skill": "react", "nivel_junior": 3, "importancia": 5 },
+        { "skill": "ux_design", "nivel_junior": 2, "importancia": 4 },
+        { "skill": "acessibilidade", "nivel_junior": 2, "importancia": 3 },
+        { "skill": "git", "nivel_junior": 3, "importancia": 3 },
+        { "skill": "logica_programacao", "nivel_junior": 2, "importancia": 3 }
+      ],
+      "roadmap": [
+        { "titulo": "Fundamentos web", "horas": 60, "topicos": ["HTML semântico", "CSS flexbox/grid", "JavaScript ES6+", "Git"] },
+        { "titulo": "Framework e design", "horas": 80, "topicos": ["React (hooks e estado)", "design system", "responsividade", "acessibilidade"] },
+        { "titulo": "Projeto de portfólio", "horas": 50, "topicos": ["SPA consumindo API pública", "testes de componente", "deploy (Vercel/Netlify)"] },
+        { "titulo": "Mercado", "horas": 30, "topicos": ["portfólio visual", "estudos de caso de UX", "LinkedIn/GitHub"] }
+      ],
+      "certificacoes": ["Meta Front-End Developer", "Google UX Design"],
+      "projetos": [
+        { "titulo": "Dashboard responsivo", "descricao": "Interface com gráficos, filtros e layout adaptável, consumindo API pública." },
+        { "titulo": "Redesign acessível", "descricao": "Reformular uma tela real aplicando WCAG e testes de usabilidade." }
+      ]
+    },
+    "ciencia_dados": {
+      "nome": "Ciência de Dados e Machine Learning",
+      "icone": "🧠",
+      "resumo": "Estatística, modelagem preditiva e inteligência artificial.",
+      "atividades": ["explorar e limpar dados", "construir modelos preditivos", "validar métricas", "comunicar resultados"],
+      "tecnologias": ["python", "pandas", "scikit_learn", "power_bi", "sql"],
+      "competencias": [
+        { "skill": "python", "nivel_junior": 3, "importancia": 5 },
+        { "skill": "estatistica", "nivel_junior": 3, "importancia": 5 },
+        { "skill": "pandas", "nivel_junior": 3, "importancia": 5 },
+        { "skill": "machine_learning", "nivel_junior": 3, "importancia": 5 },
+        { "skill": "sql", "nivel_junior": 3, "importancia": 4 },
+        { "skill": "visualizacao", "nivel_junior": 2, "importancia": 4 },
+        { "skill": "git", "nivel_junior": 2, "importancia": 3 }
+      ],
+      "roadmap": [
+        { "titulo": "Base quantitativa", "horas": 70, "topicos": ["estatística descritiva e inferência", "probabilidade", "Python para dados", "pandas"] },
+        { "titulo": "Modelagem", "horas": 90, "topicos": ["regressão e classificação", "validação cruzada", "métricas", "feature engineering"] },
+        { "titulo": "Projeto de portfólio", "horas": 60, "topicos": ["notebook completo", "dataset real", "storytelling e visualização"] },
+        { "titulo": "Mercado", "horas": 30, "topicos": ["MLflow/versionamento", "artigo técnico no Medium", "Kaggle"] }
+      ],
+      "certificacoes": ["Google Advanced Data Analytics", "AWS Certified Machine Learning – Specialty"],
+      "projetos": [
+        { "titulo": "Previsão de churn", "descricao": "Modelo com análise exploratória, comparação de algoritmos e relatório de impacto." },
+        { "titulo": "Detecção de anomalias", "descricao": "Identificar padrões fora do normal em dados de transações." }
+      ]
+    },
+    "engenharia_dados": {
+      "nome": "Engenharia de Dados",
+      "icone": "🏗️",
+      "resumo": "Pipelines ETL/ELT, arquitetura de dados e Data Lakes.",
+      "atividades": ["construir pipelines", "modelar dimensões", "orquestrar cargas", "garantir qualidade de dados"],
+      "tecnologias": ["sql", "python", "spark", "airflow", "docker"],
+      "competencias": [
+        { "skill": "sql", "nivel_junior": 4, "importancia": 5 },
+        { "skill": "etl", "nivel_junior": 3, "importancia": 5 },
+        { "skill": "modelagem_dados", "nivel_junior": 3, "importancia": 5 },
+        { "skill": "python", "nivel_junior": 3, "importancia": 4 },
+        { "skill": "spark", "nivel_junior": 2, "importancia": 4 },
+        { "skill": "airflow", "nivel_junior": 2, "importancia": 4 },
+        { "skill": "git", "nivel_junior": 3, "importancia": 3 },
+        { "skill": "docker", "nivel_junior": 2, "importancia": 3 }
+      ],
+      "roadmap": [
+        { "titulo": "Fundamentos de dados", "horas": 70, "topicos": ["SQL avançado", "modelagem dimensional", "Python para ETL", "Git"] },
+        { "titulo": "Pipelines", "horas": 90, "topicos": ["Airflow", "Spark", "camadas bronze/prata/ouro", "qualidade de dados"] },
+        { "titulo": "Projeto de portfólio", "horas": 60, "topicos": ["pipeline ponta a ponta", "orquestração", "dashboard final"] },
+        { "titulo": "Mercado", "horas": 30, "topicos": ["dbt", "catálogos de dados", "certificação de nuvem"] }
+      ],
+      "certificacoes": ["AWS Certified Data Engineer – Associate", "Databricks Certified Data Engineer Associate"],
+      "projetos": [
+        { "titulo": "Pipeline de dados público", "descricao": "Ingestão agendada de uma API pública, transformação em camadas e consumo analítico." },
+        { "titulo": "Data warehouse dimensional", "descricao": "Modelar star schema com fatos/dimensões e consultas otimizadas." }
+      ]
+    },
+    "seguranca": {
+      "nome": "Cibersegurança (Security / Pentesting)",
+      "icone": "🛡️",
+      "resumo": "Defesa cibernética, vulnerabilidades, criptografia e redes seguras.",
+      "atividades": ["auditar vulnerabilidades", "executar pentests", "monitorar incidentes", "aplicar criptografia"],
+      "tecnologias": ["linux", "redes", "burp_suite", "wireshark", "python"],
+      "competencias": [
+        { "skill": "redes", "nivel_junior": 3, "importancia": 5 },
+        { "skill": "linux", "nivel_junior": 3, "importancia": 5 },
+        { "skill": "pentest", "nivel_junior": 2, "importancia": 5 },
+        { "skill": "criptografia", "nivel_junior": 2, "importancia": 3 },
+        { "skill": "siem", "nivel_junior": 2, "importancia": 3 },
+        { "skill": "shell", "nivel_junior": 2, "importancia": 3 },
+        { "skill": "logica_programacao", "nivel_junior": 2, "importancia": 2 }
+      ],
+      "roadmap": [
+        { "titulo": "Fundamentos", "horas": 70, "topicos": ["redes TCP/IP", "Linux", "shell scripting", "criptografia básica"] },
+        { "titulo": "Ofensiva e defensiva", "horas": 90, "topicos": ["OWASP Top 10", "pentest web", "análise de logs", "resposta a incidentes"] },
+        { "titulo": "Projeto de portfólio", "horas": 50, "topicos": ["relatório de pentest em laboratório", "CTF documentado", "hardening de servidor"] },
+        { "titulo": "Mercado", "horas": 30, "topicos": ["certificação de entrada", "bug bounty", "comunidade"] }
+      ],
+      "certificacoes": ["CompTIA Security+", "eJPT (INE Security)"],
+      "projetos": [
+        { "titulo": "Relatório de pentest", "descricao": "Análise de uma aplicação vulnerável com evidências, impacto e recomendações." },
+        { "titulo": "Laboratório de detecção", "descricao": "Ambiente com logs centralizados e alertas para ataques comuns." }
+      ]
+    },
+    "devops": {
+      "nome": "DevOps & SRE",
+      "icone": "⚙️",
+      "resumo": "Automação de processos, CI/CD, contêineres e confiabilidade.",
+      "atividades": ["automatizar builds e deploys", "criar pipelines CI/CD", "containerizar aplicações", "monitorar SLIs/SLOs"],
+      "tecnologias": ["linux", "docker", "kubernetes", "github_actions", "terraform"],
+      "competencias": [
+        { "skill": "linux", "nivel_junior": 3, "importancia": 5 },
+        { "skill": "ci_cd", "nivel_junior": 3, "importancia": 5 },
+        { "skill": "docker", "nivel_junior": 3, "importancia": 5 },
+        { "skill": "kubernetes", "nivel_junior": 3, "importancia": 4 },
+        { "skill": "git", "nivel_junior": 3, "importancia": 4 },
+        { "skill": "shell", "nivel_junior": 3, "importancia": 4 },
+        { "skill": "observabilidade", "nivel_junior": 2, "importancia": 3 },
+        { "skill": "terraform", "nivel_junior": 2, "importancia": 3 }
+      ],
+      "roadmap": [
+        { "titulo": "Fundamentos", "horas": 60, "topicos": ["Linux", "Git", "shell", "redes básicas"] },
+        { "titulo": "Automação", "horas": 90, "topicos": ["Docker", "GitHub Actions", "Kubernetes", "pipelines de teste e deploy"] },
+        { "titulo": "Confiabilidade", "horas": 60, "topicos": ["métricas e logs", "alertas", "SLOs", "Terraform"] },
+        { "titulo": "Mercado", "horas": 30, "topicos": ["certificação Kubernetes/AWS", "projetos open source", "postmortems"] }
+      ],
+      "certificacoes": ["CKA (Certified Kubernetes Administrator)", "AWS Certified Solutions Architect – Associate"],
+      "projetos": [
+        { "titulo": "Pipeline completo", "descricao": "App com testes, build de imagem, deploy automatizado e rollback." },
+        { "titulo": "Observabilidade", "descricao": "Stack de métricas/logs com dashboard e alertas para um serviço real." }
+      ]
+    },
+    "cloud": {
+      "nome": "Computação em Nuvem (Cloud Architecture)",
+      "icone": "☁️",
+      "resumo": "Arquiteturas escaláveis, migração e gestão de custos em AWS/Azure/GCP.",
+      "atividades": ["projetar arquiteturas", "migrar sistemas", "dimensionar custos", "garantir alta disponibilidade"],
+      "tecnologias": ["aws", "terraform", "linux", "docker", "redes"],
+      "competencias": [
+        { "skill": "nuvem", "nivel_junior": 3, "importancia": 5 },
+        { "skill": "arquitetura_cloud", "nivel_junior": 3, "importancia": 5 },
+        { "skill": "redes", "nivel_junior": 2, "importancia": 4 },
+        { "skill": "terraform", "nivel_junior": 2, "importancia": 4 },
+        { "skill": "linux", "nivel_junior": 3, "importancia": 3 },
+        { "skill": "custos_cloud", "nivel_junior": 2, "importancia": 3 }
+      ],
+      "roadmap": [
+        { "titulo": "Fundamentos", "horas": 60, "topicos": ["modelos de serviço", "regiões/zonas", "IAM", "redes na nuvem"] },
+        { "titulo": "Arquitetura", "horas": 90, "topicos": ["alta disponibilidade", "escalabilidade", "balanceamento", "IaC com Terraform"] },
+        { "titulo": "Projeto de portfólio", "horas": 60, "topicos": ["aplicação multi-AZ", "monitoramento", "estimativa de custos"] },
+        { "titulo": "Mercado", "horas": 30, "topicos": ["certificação associate", "well-architected review", "FinOps"] }
+      ],
+      "certificacoes": ["AWS Solutions Architect – Associate", "Microsoft Azure Fundamentals (AZ-900)"],
+      "projetos": [
+        { "titulo": "Aplicação escalável", "descricao": "Deploy multi-AZ com balanceador, banco gerenciado e monitoramento." },
+        { "titulo": "Migração documentada", "descricao": "Plano de migração de um app legado para nuvem com análise de custos." }
+      ]
+    },
+    "mobile": {
+      "nome": "Desenvolvimento Mobile",
+      "icone": "📱",
+      "resumo": "Aplicativos nativos ou multiplataforma (Flutter/React Native).",
+      "atividades": ["criar telas mobile", "integrar APIs e sensores", "publicar nas lojas", "otimizar desempenho"],
+      "tecnologias": ["flutter", "react_native", "kotlin", "git", "figma"],
+      "competencias": [
+        { "skill": "mobile_dev", "nivel_junior": 3, "importancia": 5 },
+        { "skill": "logica_programacao", "nivel_junior": 3, "importancia": 4 },
+        { "skill": "api_rest", "nivel_junior": 2, "importancia": 3 },
+        { "skill": "ux_design", "nivel_junior": 2, "importancia": 3 },
+        { "skill": "git", "nivel_junior": 3, "importancia": 3 },
+        { "skill": "publicacao_lojas", "nivel_junior": 2, "importancia": 3 }
+      ],
+      "roadmap": [
+        { "titulo": "Fundamentos", "horas": 60, "topicos": ["linguagem (Dart/Kotlin/Swift)", "componentes", "navegação", "Git"] },
+        { "titulo": "Integração", "horas": 80, "topicos": ["consumo de APIs", "estado", "armazenamento local", "notificações"] },
+        { "titulo": "Projeto de portfólio", "horas": 60, "topicos": ["app completo", "testes", "build de produção"] },
+        { "titulo": "Publicação", "horas": 30, "topicos": ["Play Console/App Store", "políticas", "ASO"] }
+      ],
+      "certificacoes": ["Google Associate Android Developer", "Flutter Certified Application Developer"],
+      "projetos": [
+        { "titulo": "App com API real", "descricao": "Aplicativo com autenticação, listagem, cache offline e publicação em teste." },
+        { "titulo": "UI Kit reutilizável", "descricao": "Componentes padronizados com tema claro/escuro e acessibilidade." }
+      ]
+    },
+    "qa": {
+      "nome": "Engenharia de Qualidade e Testes (QA)",
+      "icone": "🧪",
+      "resumo": "Testes automatizados, confiabilidade e processos de qualidade.",
+      "atividades": ["escrever testes automatizados", "planejar estratégias de teste", "executar regressões", "medir cobertura"],
+      "tecnologias": ["pytest", "cypress", "postman", "github_actions", "git"],
+      "competencias": [
+        { "skill": "testes_manuais", "nivel_junior": 3, "importancia": 5 },
+        { "skill": "testes_automatizados", "nivel_junior": 2, "importancia": 5 },
+        { "skill": "api_testing", "nivel_junior": 2, "importancia": 4 },
+        { "skill": "ci_qualidade", "nivel_junior": 2, "importancia": 3 },
+        { "skill": "logica_programacao", "nivel_junior": 2, "importancia": 3 },
+        { "skill": "git", "nivel_junior": 2, "importancia": 2 }
+      ],
+      "roadmap": [
+        { "titulo": "Fundamentos de teste", "horas": 50, "topicos": ["casos de teste", "critérios de aceite", "bug report", "pirâmide de testes"] },
+        { "titulo": "Automação", "horas": 80, "topicos": ["pytest", "Cypress", "testes de API com Postman", "mocks"] },
+        { "titulo": "Qualidade no pipeline", "horas": 50, "topicos": ["CI com quality gates", "cobertura", "análise estática"] },
+        { "titulo": "Mercado", "horas": 30, "topicos": ["ISTQB CTFL", "testes de performance", "acessibilidade"] }
+      ],
+      "certificacoes": ["ISTQB CTFL", "Cypress Certified Automation Tester"],
+      "projetos": [
+        { "titulo": "Suíte de testes completa", "descricao": "Automatizar testes de um sistema open source com relatório de cobertura." },
+        { "titulo": "Pipeline com quality gate", "descricao": "CI que bloqueia merge quando testes ou cobertura falham." }
+      ]
+    },
+    "produto": {
+      "nome": "Gestão de Produtos (Product Management)",
+      "icone": "📊",
+      "resumo": "Ponte entre negócio, design e tecnologia, com priorização e métricas.",
+      "atividades": ["descobrir necessidades", "priorizar backlog", "alinhar times", "medir métricas"],
+      "tecnologias": ["jira_scrum", "analytics", "figma", "sql", "git"],
+      "competencias": [
+        { "skill": "discovery", "nivel_junior": 3, "importancia": 5 },
+        { "skill": "scrum", "nivel_junior": 3, "importancia": 5 },
+        { "skill": "roadmap_produto", "nivel_junior": 2, "importancia": 5 },
+        { "skill": "stakeholder", "nivel_junior": 3, "importancia": 4 },
+        { "skill": "metricas_produto", "nivel_junior": 2, "importancia": 4 },
+        { "skill": "sql", "nivel_junior": 1, "importancia": 2 }
+      ],
+      "roadmap": [
+        { "titulo": "Fundamentos de produto", "horas": 50, "topicos": ["problema x solução", "personas", "MVP", "métricas de produto"] },
+        { "titulo": "Descoberta e priorização", "horas": 70, "topicos": ["entrevistas", "hipóteses", "RICE/WSJF", "OKRs"] },
+        { "titulo": "Projeto de portfólio", "horas": 50, "topicos": ["one-pager de produto", "roadmap de 3 meses", "caso com dados reais"] },
+        { "titulo": "Mercado", "horas": 30, "topicos": ["certificação ágil", "comunidade de produto", "simulação de case"] }
+      ],
+      "certificacoes": ["Professional Scrum Product Owner I (PSPO I)", "Google Project Management"],
+      "projetos": [
+        { "titulo": "Caso de produto", "descricao": "One-pager com problema, persona, métrica de sucesso e roadmap priorizado." },
+        { "titulo": "Análise de funil", "descricao": "Investigar quedas de conversão com dados e propor experimentos." }
+      ]
+    }
+  }
+}
