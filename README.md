@@ -59,7 +59,9 @@ contribuição de cada dimensão e todas as regras ativadas — e um botão para
 
 ## 🚀 Como executar
 
-Requisitos: **Python 3.10+**.
+Requisitos: **Python 3.10+**. Nenhum passo de configuração além dos comandos abaixo —
+a base de conhecimento é localizada a partir do próprio código, então funciona de qualquer
+diretório de trabalho.
 
 ```bash
 # 1. (opcional, recomendado) ambiente virtual
@@ -69,7 +71,7 @@ python -m venv .venv
 # Linux/macOS
 source .venv/bin/activate
 
-# 2. dependências
+# 2. dependências (inclui o pytest)
 pip install -r requirements.txt
 
 # 3. interface web
@@ -80,14 +82,18 @@ A aplicação abre em `http://localhost:8501`.
 
 ### Testes
 
+`requirements.txt` já traz o `pytest`, então basta:
+
 ```bash
-pip install -r requirements-dev.txt
 pytest
 ```
 
 ```
 90 passed
 ```
+
+> Verificado em uma instalação limpa: `git clone` + `python -m venv` + `pip install -r requirements.txt`
+> + `pytest` (90 passed) + `streamlit run app.py` sem erros no console do navegador.
 
 ### Diagnóstico por linha de comando
 
@@ -234,8 +240,7 @@ consultor-carreiras-pro/
 │   └── gerar_docs.py               # gera a documentação a partir do JSON
 ├── conftest.py
 ├── pytest.ini
-├── requirements.txt
-└── requirements-dev.txt
+└── requirements.txt
 ```
 
 **Fluxo:** `perguntas (JSON) → respostas (dict) → MotorInferencia → Resultado → recomendar.analisar → PlanoAcao → interface`.
